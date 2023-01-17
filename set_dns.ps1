@@ -20,3 +20,4 @@ if ($home_networks -contains $network_name) {
 else {
 	Set-DnsClientServerAddress -InterfaceIndex $interface_index -ServerAddresses $generic_dns_primary
 }
+ipconfig /flushdns
