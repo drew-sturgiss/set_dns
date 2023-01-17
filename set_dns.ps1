@@ -13,7 +13,6 @@ $network_name = Get-NetConnectionProfile -InterfaceAlias 'Wi-Fi' | Select -Expan
 # Get the index number of the Wi-Fi network
 $interface_index = Get-NetConnectionProfile -InterfaceAlias 'Wi-Fi' | Select -ExpandProperty InterfaceIndex
 
-
 # If connected to a local network, set local DNS
 if ($home_networks -contains $network_name) {
 	Set-DnsClientServerAddress -InterfaceIndex $interface_index -ServerAddresses $local_dns
